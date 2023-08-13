@@ -1,0 +1,8 @@
+.gitignore
+geckodriver
+geckodriver.exe
+geckodriver.log
+README.txt
+Dockerfile
+.dockerignore
+secret_command
