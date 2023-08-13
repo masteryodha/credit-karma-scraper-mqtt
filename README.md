@@ -30,7 +30,7 @@ The version of firefox and GeckoDriver needs to match.  Check the docker ENV var
 
 
 ```
-python .\getCreditData.py --MQTT_URL localhost --MQTT_PORT 1883 --MQTT_USER my_mqtt_user --MQTT_PASSWORD my_mqtt_password --WEB_USER my_borrowell_user --WEB_PASSWORD my_borrowell_password  --MYTIMEZONE America/Montreal
+python .\getCreditData.py --MQTT_URL localhost --MQTT_PORT 1883 --MQTT_USER my_mqtt_user --MQTT_PASSWORD my_mqtt_password --WEB_USER my_creditkarma_user --WEB_PASSWORD my_creditkarma_password  --MYTIMEZONE America/Montreal
 ```
 
 
@@ -59,7 +59,7 @@ Parameters :
 
 Run with the necessary parameters : 
 ```
-docker run -d --rm --name credit-borrowell -e "MQTT_URL=localhost" -e "MQTT_PORT=1883" -e "MQTT_USER=my_mqtt_user" -e "MQTT_PASSWORD=my_mqtt_password" -e "WEB_USER=my_borrowell_user" -e "WEB_PASSWORD=my_borrowell_password" credit-borrowell
+docker run -d --rm --name credit-creditkarma -e "MQTT_URL=localhost" -e "MQTT_PORT=1883" -e "MQTT_USER=my_mqtt_user" -e "MQTT_PASSWORD=my_mqtt_password" -e "WEB_USER=my_creditkarma_user" -e "WEB_PASSWORD=my_creditkarma_password" credit-creditkarma
 ```
 
 
@@ -82,59 +82,59 @@ And my mqtt.yaml file :
 ##
 ##  C R E D I T 
 ##
-##  Borrowell
+##  creditkarma
 ##
 ########################################################
 
-## BORROWELL
-  - name: borrowell_credit_score
-    state_topic: "borrowell/credit_score"
-    unique_id: "borrowell_credit_score"
+## creditkarma
+  - name: creditkarma_credit_score
+    state_topic: "creditkarma/credit_score"
+    unique_id: "creditkarma_credit_score"
 
-  - name: borrowell_credit_score_maj
-    state_topic: "borrowell/date_maj"
-    unique_id: "borrowell_credit_score_maj"
+  - name: creditkarma_credit_score_maj
+    state_topic: "creditkarma/date_maj"
+    unique_id: "creditkarma_credit_score_maj"
 
 
 ### Factors
-  - name: borrowell_factor_missed_payments
-    state_topic: "borrowell/factors/Missed payments"
-    unique_id: "borrowell_factor_missed_payments"
+  - name: creditkarma_factor_missed_payments
+    state_topic: "creditkarma/factors/Missed payments"
+    unique_id: "creditkarma_factor_missed_payments"
 
-  - name: borrowell_factor_credit_utilization
-    state_topic: "borrowell/factors/Credit utilization"
-    unique_id: "borrowell_factor_credit_utilization"
+  - name: creditkarma_factor_credit_utilization
+    state_topic: "creditkarma/factors/Credit utilization"
+    unique_id: "creditkarma_factor_credit_utilization"
     
-  - name: borrowell_factor_derogatory_marks
-    state_topic: "borrowell/factors/Derogatory marks"
-    unique_id: "borrowell_factor_derogatory_marks"
+  - name: creditkarma_factor_derogatory_marks
+    state_topic: "creditkarma/factors/Derogatory marks"
+    unique_id: "creditkarma_factor_derogatory_marks"
 
-  - name: borrowell_factor_credit_age
-    state_topic: "borrowell/factors/Avg. credit age"
-    unique_id: "borrowell_factor_credit_age"
+  - name: creditkarma_factor_credit_age
+    state_topic: "creditkarma/factors/Avg. credit age"
+    unique_id: "creditkarma_factor_credit_age"
 
-  - name: borrowell_factor_total_accounts
-    state_topic: "borrowell/factors/Total accounts"
-    unique_id: "borrowell_factor_total_accounts"
+  - name: creditkarma_factor_total_accounts
+    state_topic: "creditkarma/factors/Total accounts"
+    unique_id: "creditkarma_factor_total_accounts"
 
-  - name: borrowell_factor_hard_inquiries
-    state_topic: "borrowell/factors/Hard inquiries"
-    unique_id: "borrowell_factor_hard_inquiries"
+  - name: creditkarma_factor_hard_inquiries
+    state_topic: "creditkarma/factors/Hard inquiries"
+    unique_id: "creditkarma_factor_hard_inquiries"
 
 ### Accounts
-  - name: borrowell_account_tangerine
-    state_topic: "borrowell/accounts/TANGERINE_0"
-    unique_id: "borrowell_account_tangerine"
+  - name: creditkarma_account_tangerine
+    state_topic: "creditkarma/accounts/TANGERINE_0"
+    unique_id: "creditkarma_account_tangerine"
 
-  - name: borrowell_account_pc_optimum
-    state_topic: "borrowell/accounts/PRESIDENTS CHOICE MC_1"
-    unique_id: "borrowell_account_pc_optimum"
+  - name: creditkarma_account_pc_optimum
+    state_topic: "creditkarma/accounts/PRESIDENTS CHOICE MC_1"
+    unique_id: "creditkarma_account_pc_optimum"
 
-  - name: borrowell_account_bmo_auto
-    state_topic: "borrowell/accounts/BMO 1111_2"
-    unique_id: "borrowell_account_bmo_auto"
+  - name: creditkarma_account_bmo_auto
+    state_topic: "creditkarma/accounts/BMO 1111_2"
+    unique_id: "creditkarma_account_bmo_auto"
 
-  - name: borrowell_account_mortgage
-    state_topic: "borrowell/accounts/Undisclosed Mortgage Provider_10"
-    unique_id: "borrowell_account_mortgage"
-
+  - name: creditkarma_account_mortgage
+    state_topic: "creditkarma/accounts/Undisclosed Mortgage Provider_10"
+    unique_id: "creditkarma_account_mortgage"
+```
