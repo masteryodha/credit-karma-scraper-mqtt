@@ -1,3 +1,5 @@
+# This is not working anymore.  And I have no time to work on that in the near future
+
 # Description
 Intuit Credit Karma offers free credit scores, reports and insights
 The information seems to come from TransUnion
